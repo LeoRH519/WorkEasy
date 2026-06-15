@@ -1,0 +1,13 @@
+{
+  "name": "workeasy",
+  "version": "0.1.0",
+  "description": "A desktop productivity assistant with tasks, pomodoro, dashboard, and local AI helper.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "@anthropic-ai/sdk": "^0.76.0",
+    "electron": "^31.7.7"
+  }
+}

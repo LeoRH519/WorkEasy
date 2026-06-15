@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WorkEasy</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero card">
+        <div>
+          <p class="eyebrow">WorkEasy</p>
+          <h1>今天也一起高效完成工作。</h1>
+          <p class="hero-copy">管理任务、保持专注、让 AI 帮你整理下一步。</p>
+        </div>
+        <div class="focus-ring">
+          <span id="focusMinutes">25</span>
+          <small>分钟专注</small>
+        </div>
+      </section>
+
+      <section class="dashboard-grid">
+        <article class="metric card">
+          <span id="totalTasks">0</span>
+          <p>全部任务</p>
+        </article>
+        <article class="metric card">
+          <span id="doneTasks">0</span>
+          <p>已完成</p>
+        </article>
+        <article class="metric card">
+          <span id="focusSessions">0</span>
+          <p>专注次数</p>
+        </article>
+        <article class="metric card">
+          <span id="focusTotal">0</span>
+          <p>累计分钟</p>
+        </article>
+      </section>
+
+      <section class="content-grid">
+        <article class="card task-panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Tasks</p>
+              <h2>任务清单</h2>
+            </div>
+          </div>
+          <form id="taskForm" class="task-form">
+            <input id="taskInput" type="text" placeholder="输入一个任务，例如：整理上午会议纪要" autocomplete="off" />
+            <button type="submit">添加</button>
+          </form>
+          <ul id="taskList" class="task-list"></ul>
+        </article>
+
+        <article class="card timer-panel">
+          <p class="eyebrow">Pomodoro</p>
+          <h2>番茄钟</h2>
+          <div id="timerDisplay" class="timer-display">25:00</div>
+          <div class="timer-controls">
+            <button id="startPauseBtn">开始</button>
+            <button id="resetBtn" class="secondary">重置</button>
+          </div>
+          <label class="timer-length">
+            专注时长
+            <input id="minutesInput" type="number" min="5" max="90" value="25" />
+            分钟
+          </label>
+        </article>
+
+        <article class="card ai-panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">AI Buddy</p>
+              <h2>AI 助手</h2>
+            </div>
+            <button id="copyPromptBtn" class="secondary">复制回答</button>
+          </div>
+          <div class="ai-settings">
+            <select id="providerInput" aria-label="模型提供商">
+              <option value="openai">OpenAI 兼容</option>
+              <option value="claude">Claude 官方</option>
+            </select>
+            <input id="apiBaseInput" type="url" placeholder="API 地址，例如：https://api.openai.com/v1" autocomplete="off" />
+            <input id="modelInput" type="text" placeholder="模型名，例如：gpt-4o-mini / claude-opus-4-7" autocomplete="off" />
+            <input id="apiKeyInput" type="password" placeholder="API Key（只保存在本机浏览器存储）" autocomplete="off" />
+          </div>
+          <textarea id="aiInput" placeholder="写下你现在卡住的点、目标或会议记录，WorkEasy 会调用大模型给你建议。"></textarea>
+          <div class="ai-actions">
+            <button id="generatePromptBtn">生成提示词</button>
+            <button id="askAiBtn">调用大模型</button>
+          </div>
+          <div id="aiOutput" class="ai-output">选择 OpenAI 兼容或 Claude 官方，填入对应 API Key 后即可调用大模型；我不会替你写入任何现有密钥。</div>
+        </article>
+      </section>
+    </main>
+
+    <script src="renderer.js"></script>
+  </body>
+</html>
