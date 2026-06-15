@@ -180,7 +180,8 @@ h2 {
 
 .task-panel,
 .timer-panel,
-.ai-panel {
+.ai-panel,
+.local-agent-panel {
   padding: 1.5rem;
 }
 
@@ -188,7 +189,8 @@ h2 {
   min-height: 430px;
 }
 
-.ai-panel {
+.ai-panel,
+.local-agent-panel {
   grid-column: 1 / -1;
 }
 
@@ -288,7 +290,8 @@ textarea:focus {
   max-width: 90px;
 }
 
-.ai-panel textarea {
+.ai-panel textarea,
+.local-agent-panel textarea {
   min-height: 110px;
   resize: vertical;
 }
@@ -317,6 +320,23 @@ textarea:focus {
   min-height: 120px;
   padding: 1rem;
   white-space: pre-wrap;
+}
+
+.pending-tool {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 18px;
+  color: #9a3412;
+  margin: 0.8rem 0;
+  padding: 1rem;
+}
+
+.pending-tool pre {
+  white-space: pre-wrap;
+}
+
+.hidden {
+  display: none;
 }
 
 @media (max-width: 850px) {

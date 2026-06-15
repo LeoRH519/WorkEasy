@@ -93,6 +93,31 @@
           </div>
           <div id="aiOutput" class="ai-output">选择 OpenAI 兼容或 Claude 官方，填入对应 API Key 后即可调用大模型；我不会替你写入任何现有密钥。</div>
         </article>
+
+        <article class="card local-agent-panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Local Agent</p>
+              <h2>本地执行助手</h2>
+            </div>
+            <button id="chooseWorkspaceBtn" class="secondary">选择工作目录</button>
+          </div>
+          <input id="workspaceInput" type="text" placeholder="先选择允许 WorkEasy 读写的工作目录" readonly />
+          <textarea id="agentInput" placeholder="例如：读取这个目录的 README，总结项目结构。写文件和运行命令会先请求你确认。"></textarea>
+          <div class="ai-actions">
+            <button id="runAgentBtn">让 Claude 执行</button>
+            <button id="clearAgentBtn" class="secondary">清空输出</button>
+          </div>
+          <div id="pendingToolBox" class="pending-tool hidden">
+            <strong id="pendingToolTitle">等待确认</strong>
+            <pre id="pendingToolDetails"></pre>
+            <div class="ai-actions">
+              <button id="approveToolBtn">允许执行</button>
+              <button id="denyToolBtn" class="secondary">拒绝</button>
+            </div>
+          </div>
+          <div id="agentOutput" class="ai-output">本地执行助手会显示在这里。危险操作不会自动执行。</div>
+        </article>
       </section>
     </main>
 

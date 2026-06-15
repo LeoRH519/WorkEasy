@@ -1,5 +1,8 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
-const Anthropic = require('@anthropic-ai/sdk');
+const { app, BrowserWindow, ipcMain, dialog } = require('electron');
+const AnthropicModule = require('@anthropic-ai/sdk');
+const Anthropic = AnthropicModule.default || AnthropicModule;
+const { exec } = require('child_process');
+const fs = require('fs/promises');
 const path = require('path');
 
 async function callOpenAiCompatible({ apiBase, apiKey, model, messages }) {
